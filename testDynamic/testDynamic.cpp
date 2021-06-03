@@ -2,11 +2,15 @@
 
 #include <iostream>
 #include "Header.h"
+extern "C" __declspec(dllimport) int MyGroup(int);
+extern "C" __declspec(dllimport) void Myname(char*);
 
 int main()
 {
     std::cout << "My group is "<< MyGroup(561220) << "\n";
-    std::cout << "My name is " << MyName("Pham Xuan Thien") << "\n";
+    char name[50];
+    MyName(name);
+    std::cout << "My name is " << name << "\n";
     system("pause");
     return 0;
 }
